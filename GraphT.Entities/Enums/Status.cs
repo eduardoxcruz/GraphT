@@ -1,3 +1,11 @@
 ﻿namespace GraphT.Entities.Enums;
 
-public enum Status {  }
+public enum Status
+{
+    Backlog,
+    ReadyToStart,
+    InProgress,
+    Paused,
+    Droped,
+    Completed,
+}
