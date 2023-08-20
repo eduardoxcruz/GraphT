@@ -1,3 +1,10 @@
 ﻿namespace GraphT.Entities.Enums;
 
-public enum Priority {  }
+public enum Priority
+{
+    Low,
+    SemiLow,
+    Medium,
+    SemiHigh,
+    High
+}
