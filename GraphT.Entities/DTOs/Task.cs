@@ -4,7 +4,7 @@ namespace GraphT.Entities.DTOs;
 
 public class Task
 {
-    public string Id { get; set; }
+    public string Id { get; init; }
     public string Name { get; set; }
     public Status Status { get; set; }
     public Priority Priority { get; set; }
