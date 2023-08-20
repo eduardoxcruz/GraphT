@@ -12,12 +12,12 @@ public class Task
     
     #region Punctuality And Time Spend
 
-    public DateTime CreatedTime { get; set; }
     public DateTime StartDate { get; set; }
     public DateTime FinishDate { get; set; }
     public DateTime LimitDate { get; set; }
     public TimeSpan TimeSpend { get; set; }
     public string Punctuality { get; set; }
+    public DateTime CreatedTime { get; init; }
 
     #endregion
 
