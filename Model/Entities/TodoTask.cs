@@ -6,7 +6,7 @@ public class TodoTask
     public string Name { get; set; }
     public bool IsFun { get; private set; }
     public bool IsProductive { get; private set; }
-    public float Progress { get; set; }
+    public float Progress { get; private set; }
 
     public TodoTask(long id, string name, bool isFun, bool isProductive, float progress)
     {
