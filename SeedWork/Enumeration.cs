@@ -43,6 +43,6 @@ public abstract class Enumeration : IComparable
     
     public int CompareTo(object? obj)
     {
-        throw new NotImplementedException();
+        return Id.CompareTo(((Enumeration)obj).Id);
     }
 }
