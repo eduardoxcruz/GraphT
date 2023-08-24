@@ -2,5 +2,5 @@
 
 public interface IPortT<T>
 {
-    
+    ValueTask Handle(T dto);
 }
