@@ -10,8 +10,7 @@ public class TaskAggregate : TodoTask
     public Priority Priority { get; private set; }
     public Status Status { get; private set; }
 
-    public TaskAggregate(long id, string name, bool isFun, bool isProductive, Status status) 
-        : base(id, name)
+    public TaskAggregate(long id, string name, bool isFun, bool isProductive, Status status) : base(id, name)
     {
         IsFun = isFun;
         IsProductive = isProductive;
