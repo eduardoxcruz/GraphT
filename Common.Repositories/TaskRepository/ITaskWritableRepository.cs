@@ -1,6 +1,6 @@
 ﻿using Model.Aggregates;
 
-namespace Repositories.TaskRepository;
+namespace Common.Repositories.TaskRepository;
 
 public interface ITaskWritableRepository
 {
