@@ -1,6 +1,6 @@
 ﻿namespace Common.Interfaces;
 
-public interface IPresenter
+public interface IPresenter<out T>
 {
     
 }
