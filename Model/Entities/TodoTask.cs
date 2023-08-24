@@ -2,12 +2,12 @@
 
 public class TodoTask
 {
-    public long Id { get; set; }
+    public string Id { get; private set; }
     public string Name { get; set; }
 
-    public TodoTask(long id, string name)
+    public TodoTask(string name)
     {
-        Id = id;
         Name = name;
+        Id = DateTime.Now.Ticks + "-" + Name;
     }
 }
