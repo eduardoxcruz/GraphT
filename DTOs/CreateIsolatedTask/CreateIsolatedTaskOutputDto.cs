@@ -2,5 +2,5 @@
 
 public class CreateIsolatedTaskOutputDto
 {
-    
+    public string TaskId { get; set; }
 }
