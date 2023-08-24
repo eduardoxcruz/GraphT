@@ -28,6 +28,19 @@ public abstract class Enumeration : IComparable
             .Cast<T>();
     }
 
+    public override bool Equals(object obj)
+    {
+        if (obj is not Enumeration otherValue)
+        {
+            return false;
+        }
+
+        var typeMatches = GetType() == obj.GetType();
+        var valueMatches = Id.Equals(otherValue.Id);
+
+        return typeMatches && valueMatches;
+    }
+    
     public int CompareTo(object? obj)
     {
         throw new NotImplementedException();
