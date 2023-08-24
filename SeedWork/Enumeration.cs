@@ -1,4 +1,6 @@
-﻿namespace SeedWork;
+﻿using System.Reflection;
+
+namespace SeedWork;
 
 public abstract class Enumeration : IComparable
 {
@@ -15,6 +17,15 @@ public abstract class Enumeration : IComparable
     public override string ToString()
     {
         return Name;
+    }
+    
+    public static IEnumerable<T> GetAll<T>() where T : Enumeration
+    {
+        return typeof(T).GetFields(BindingFlags.Public |
+                                   BindingFlags.Static |
+                                   BindingFlags.DeclaredOnly)
+            .Select(f => f.GetValue(null))
+            .Cast<T>();
     }
 
     public int CompareTo(object? obj)
