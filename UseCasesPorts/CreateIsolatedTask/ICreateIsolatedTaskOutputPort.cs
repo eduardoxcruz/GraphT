@@ -1,6 +1,10 @@
-﻿namespace UseCasesPorts.CreateIsolatedTask;
+﻿using Common.Interfaces;
 
-public interface ICreateIsolatedTaskOutputPort
+using DTOs.CreateIsolatedTask;
+
+namespace UseCasesPorts.CreateIsolatedTask;
+
+public interface ICreateIsolatedTaskOutputPort : IPort<CreateIsolatedTaskOutputDto>
 {
     
 }
