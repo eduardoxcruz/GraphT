@@ -12,4 +12,19 @@ public class Priority : Enumeration
     public Priority(int id, string name) : base(id, name)
     {
     }
+    
+    public static Priority FromValues(bool isFun, bool isProductive)
+    {
+        switch (isFun)
+        {
+            case true when isProductive:
+                return Purposeful;
+            case false when isProductive:
+                return Necessary;
+            case true when !isProductive:
+                return Entertaining;
+            default:
+                return Superfluous;
+        }
+    }
 }
