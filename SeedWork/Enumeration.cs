@@ -12,6 +12,11 @@ public abstract class Enumeration : IComparable
         Name = name;
     }
 
+    public override string ToString()
+    {
+        return Name;
+    }
+
     public int CompareTo(object? obj)
     {
         throw new NotImplementedException();
