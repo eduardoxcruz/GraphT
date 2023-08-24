@@ -1,6 +1,6 @@
 ﻿namespace Common.Interfaces;
 
-public interface IPortT<T>
+public interface IPort<T>
 {
     ValueTask Handle(T dto);
 }
