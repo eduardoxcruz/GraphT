@@ -8,6 +8,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\Common.Interfaces\Common.Interfaces.csproj" />
+      <ProjectReference Include="..\DTOs\DTOs.csproj" />
     </ItemGroup>
 
 </Project>
