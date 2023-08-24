@@ -8,8 +8,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeedWork", "SeedWork\SeedWo
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UnitTests", "UnitTests", "{1DD3C029-06FB-4AF0-A005-209706713796}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeedWork.Tests", "SeedWork.Tests\SeedWork.Tests.csproj", "{86D080F3-3C08-4208-ABBD-1337408A6356}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,7 +16,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{700CF597-613C-4D1C-B1F6-877F0FACFB77} = {0DB70A74-52C2-4E98-ABC0-722A9CC77408}
 		{1538869F-E9C1-417A-AFF5-7257301B4156} = {0DB70A74-52C2-4E98-ABC0-722A9CC77408}
-		{86D080F3-3C08-4208-ABBD-1337408A6356} = {1DD3C029-06FB-4AF0-A005-209706713796}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{700CF597-613C-4D1C-B1F6-877F0FACFB77}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -29,9 +26,5 @@ Global
 		{1538869F-E9C1-417A-AFF5-7257301B4156}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1538869F-E9C1-417A-AFF5-7257301B4156}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1538869F-E9C1-417A-AFF5-7257301B4156}.Release|Any CPU.Build.0 = Release|Any CPU
-		{86D080F3-3C08-4208-ABBD-1337408A6356}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{86D080F3-3C08-4208-ABBD-1337408A6356}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{86D080F3-3C08-4208-ABBD-1337408A6356}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{86D080F3-3C08-4208-ABBD-1337408A6356}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
