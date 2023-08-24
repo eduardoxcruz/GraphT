@@ -14,6 +14,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application Business Rules"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.Interfaces", "Common.Interfaces\Common.Interfaces.csproj", "{B15379DF-1B0E-4032-9A14-9DEA24DC8274}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UseCasesPorts", "UseCasesPorts\UseCasesPorts.csproj", "{C632DAD9-30CC-4E3F-9BC6-C798DF02E54C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,6 +26,7 @@ Global
 		{1538869F-E9C1-417A-AFF5-7257301B4156} = {0DB70A74-52C2-4E98-ABC0-722A9CC77408}
 		{10495818-867B-41DE-A172-C530845781AD} = {1DD3C029-06FB-4AF0-A005-209706713796}
 		{B15379DF-1B0E-4032-9A14-9DEA24DC8274} = {14776811-A30B-4485-BF30-87ADF48A4E55}
+		{C632DAD9-30CC-4E3F-9BC6-C798DF02E54C} = {14776811-A30B-4485-BF30-87ADF48A4E55}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{700CF597-613C-4D1C-B1F6-877F0FACFB77}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -42,5 +45,9 @@ Global
 		{B15379DF-1B0E-4032-9A14-9DEA24DC8274}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B15379DF-1B0E-4032-9A14-9DEA24DC8274}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B15379DF-1B0E-4032-9A14-9DEA24DC8274}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C632DAD9-30CC-4E3F-9BC6-C798DF02E54C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C632DAD9-30CC-4E3F-9BC6-C798DF02E54C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C632DAD9-30CC-4E3F-9BC6-C798DF02E54C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C632DAD9-30CC-4E3F-9BC6-C798DF02E54C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
