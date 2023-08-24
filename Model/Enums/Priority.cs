@@ -1,3 +1,9 @@
 ﻿namespace Model.Enums;
 
-public enum Priority {  }
+public enum Priority
+{
+    Superfluous,
+    Entertaining,
+    Necessary,
+    Purposeful
+}
