@@ -57,4 +57,22 @@ public class PriorityTests
         // Assert
         Assert.Equal(Priority.Entertaining, priority);
     }
+    
+    [Fact]
+    public void FromValues_ReturnsSuperfluous_WhenIsNotFunAndIsNotProductive()
+    {
+        Priority priority;
+        bool isFun;
+        bool isProductive;
+
+        // Arrange
+        isFun = false;
+        isProductive = false;
+
+        // Act
+        priority = Priority.FromValues(isFun, isProductive);
+
+        // Assert
+        Assert.Equal(Priority.Superfluous, priority);
+    }
 }
