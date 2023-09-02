@@ -3,18 +3,7 @@ using Model.ValueObjects;
 
 namespace Model.Aggregates;
 
-public class TaskAggregate : TodoTask
+public class TaskAggregate
 {
-    public bool IsFun { get; private set; }
-    public bool IsProductive { get; private set; }
-    public Priority Priority { get; private set; }
-    public Status Status { get; private set; }
-
-    public TaskAggregate(string name, bool isFun, bool isProductive, Status status) : base(name)
-    {
-        IsFun = isFun;
-        IsProductive = isProductive;
-        Priority = Priority.FromValues(IsFun, IsProductive);
-        Status = status;
-    }
+    
 }
