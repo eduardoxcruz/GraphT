@@ -1,10 +1,12 @@
 ﻿using Common.Repositories.TaskRepository;
 
+using DTOs.CreateIsolatedTask;
+
 using UseCasesPorts.CreateIsolatedTask;
 
 namespace UseCases.CreateIsolatedTask;
 
-public class CreateIsolatedTaskUseCase
+public class CreateIsolatedTaskUseCase : ICreateIsolatedTaskInputPort
 {
     private readonly ICreateIsolatedTaskOutputPort _outputPort;
     private readonly ITaskWritableRepository _taskRepository;
@@ -13,5 +15,10 @@ public class CreateIsolatedTaskUseCase
     {
         _outputPort = outputPort;
         _taskRepository = taskRepository;
+    }
+
+    public ValueTask Handle(CreateIsolatedTaskInputDto dto)
+    {
+        throw new NotImplementedException();
     }
 }
