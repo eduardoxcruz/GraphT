@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Enterprise Business Rules", "Enterprise Business Rules", "{0DB70A74-52C2-4E98-ABC0-722A9CC77408}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1. Enterprise Business Rules", "1. Enterprise Business Rules", "{0DB70A74-52C2-4E98-ABC0-722A9CC77408}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Model", "Model\Model.csproj", "{700CF597-613C-4D1C-B1F6-877F0FACFB77}"
 EndProject
