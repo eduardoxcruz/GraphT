@@ -1,11 +1,13 @@
-﻿namespace DTOs.CreateIsolatedTask;
+﻿using Model.Entities;
+
+namespace DTOs.CreateIsolatedTask;
 
 public class CreateIsolatedTaskOutputDto
 {
     public string TaskId { get; set; }
 
-    public CreateIsolatedTaskOutputDto(string taskId)
+    public CreateIsolatedTaskOutputDto(TodoTask task)
     {
-        TaskId = taskId;
+        TaskId = task.Id;
     }
 }
