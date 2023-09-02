@@ -23,4 +23,8 @@
         </PackageReference>
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\UseCases\UseCases.csproj" />
+    </ItemGroup>
+
 </Project>
