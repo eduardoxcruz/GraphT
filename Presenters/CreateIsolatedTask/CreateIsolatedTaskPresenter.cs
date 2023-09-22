@@ -1,6 +1,10 @@
-﻿namespace Presenters.CreateIsolatedTask;
+﻿using Common.Interfaces;
 
-public class CreateIsolatedTaskPresenter
+using DTOs.CreateIsolatedTask;
+
+namespace Presenters.CreateIsolatedTask;
+
+public class CreateIsolatedTaskPresenter : IPresenter<CreateIsolatedTaskOutputDto>
 {
-    
+    public CreateIsolatedTaskOutputDto Content { get; }
 }
