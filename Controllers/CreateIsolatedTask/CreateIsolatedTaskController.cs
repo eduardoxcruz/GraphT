@@ -1,6 +1,11 @@
-﻿namespace Controllers.CreateIsolatedTask;
+﻿using DTOs.CreateIsolatedTask;
 
-public class CreateIsolatedTaskController
+namespace Controllers.CreateIsolatedTask;
+
+public class CreateIsolatedTaskController : ICreateIsolatedTaskController
 {
-    
+    public ValueTask<CreateIsolatedTaskOutputDto> CreateIsolatedTask(CreateIsolatedTaskInputDto dto)
+    {
+        throw new NotImplementedException();
+    }
 }
