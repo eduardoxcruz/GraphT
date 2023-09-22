@@ -14,7 +14,7 @@ using UseCasesPorts.CreateIsolatedTask;
 
 namespace UseCases.Tests.CreateIsolatedTask;
 
-public class CreateIsolatedTaskTests
+public class CreateIsolatedTaskUseCaseTests
 {
     [Fact]
     public async void Handle_ShouldCreateNewTaskAndCallOutputPort()
