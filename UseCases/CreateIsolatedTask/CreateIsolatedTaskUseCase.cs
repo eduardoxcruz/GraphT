@@ -3,6 +3,9 @@ using Common.Repositories.TaskRepository;
 
 using DTOs.CreateIsolatedTask;
 
+using Model.Aggregates;
+using Model.Entities;
+
 using UseCasesPorts.CreateIsolatedTask;
 
 namespace UseCases.CreateIsolatedTask;
@@ -23,8 +26,12 @@ public class CreateIsolatedTaskUseCase : ICreateIsolatedTaskInputPort
         _unitOfWork = unitOfWork;
     }
 
-    public ValueTask Handle(CreateIsolatedTaskInputDto dto)
+    public async ValueTask Handle(CreateIsolatedTaskInputDto inputDto)
     {
-        throw new NotImplementedException();
+        TodoTask task = new(inputDto.Name, inputDto.IsFun, inputDto.IsProductive, inputDto.Status);
+        CreateIsolatedTaskOutputDto outDto = new(task);
+        _taskRepository.Create(task);
+        await _unitOfWork.SaveChanges();
+        await _outputPort.Handle(outDto);
     }
 }
