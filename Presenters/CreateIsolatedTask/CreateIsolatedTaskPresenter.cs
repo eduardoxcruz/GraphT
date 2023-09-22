@@ -2,9 +2,16 @@
 
 using DTOs.CreateIsolatedTask;
 
+using UseCasesPorts.CreateIsolatedTask;
+
 namespace Presenters.CreateIsolatedTask;
 
-public class CreateIsolatedTaskPresenter : IPresenter<CreateIsolatedTaskOutputDto>
+public class CreateIsolatedTaskPresenter : IPresenter<CreateIsolatedTaskOutputDto>, ICreateIsolatedTaskOutputPort
 {
-    public CreateIsolatedTaskOutputDto Content { get; }
+    public CreateIsolatedTaskOutputDto Content { get; private set;  }
+    
+    public ValueTask Handle(CreateIsolatedTaskOutputDto dto)
+    {
+        throw new NotImplementedException();
+    }
 }
