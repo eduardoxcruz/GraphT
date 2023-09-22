@@ -1,4 +1,6 @@
-﻿using DTOs.CreateIsolatedTask;
+﻿using Common.Interfaces;
+
+using DTOs.CreateIsolatedTask;
 
 using UseCasesPorts.CreateIsolatedTask;
 
@@ -15,8 +17,9 @@ public class CreateIsolatedTaskController : ICreateIsolatedTaskController
         _outputPort = outputPort;
     }
 
-    public ValueTask<CreateIsolatedTaskOutputDto> CreateIsolatedTask(CreateIsolatedTaskInputDto dto)
+    public async ValueTask<CreateIsolatedTaskOutputDto> CreateIsolatedTask(CreateIsolatedTaskInputDto dto)
     {
-        throw new NotImplementedException();
+        await _inputPort.Handle(dto);
+        return ((IPresenter<CreateIsolatedTaskOutputDto>)_outputPort).Content;
     }
 }
