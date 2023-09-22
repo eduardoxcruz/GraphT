@@ -12,6 +12,7 @@ public class CreateIsolatedTaskPresenter : IPresenter<CreateIsolatedTaskOutputDt
     
     public ValueTask Handle(CreateIsolatedTaskOutputDto dto)
     {
-        throw new NotImplementedException();
+        Content = dto;
+        return ValueTask.CompletedTask;
     }
 }
