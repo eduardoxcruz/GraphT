@@ -10,7 +10,12 @@ namespace Neo4j.Repositories.TaskRepository;
 public class TaskWritableRepository : ITaskWritableRepository
 {
     private readonly IGraphClient _graphClient;
-    
+
+    public TaskWritableRepository(IGraphClient graphClient)
+    {
+        _graphClient = graphClient;
+    }
+
     public void Create(TodoTask task)
     {
         throw new NotImplementedException();
