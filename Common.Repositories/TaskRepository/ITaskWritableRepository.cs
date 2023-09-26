@@ -5,7 +5,7 @@ namespace Common.Repositories.TaskRepository;
 
 public interface ITaskWritableRepository
 {
-    void Create(TodoTask task);
+    ValueTask<string> Create(TodoTask task);
     
     void Create(TaskAggregate task);
 }

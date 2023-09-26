@@ -16,7 +16,7 @@ public class TaskWritableRepository : ITaskWritableRepository
         _graphClient = graphClient;
     }
 
-    public void Create(TodoTask task)
+    public ValueTask<string> Create(TodoTask task)
     {
         throw new NotImplementedException();
     }
