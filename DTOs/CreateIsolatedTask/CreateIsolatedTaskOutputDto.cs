@@ -2,9 +2,9 @@
 
 public class CreateIsolatedTaskOutputDto
 {
-    public string TaskId { get; set; }
+    public string? TaskId { get; set; }
 
-    public CreateIsolatedTaskOutputDto(string taskId)
+    public CreateIsolatedTaskOutputDto(string? taskId)
     {
         TaskId = taskId;
     }

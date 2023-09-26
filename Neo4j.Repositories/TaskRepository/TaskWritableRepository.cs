@@ -16,9 +16,24 @@ public class TaskWritableRepository : ITaskWritableRepository
         _graphClient = graphClient;
     }
 
-    public ValueTask<string> Create(TodoTask task)
+    public async ValueTask<string?> Create(TodoTask task)
     {
-        throw new NotImplementedException();
+        string? taskId;
+
+        try
+        {
+            await _graphClient.Cypher
+                .Create("(todoTask:TodoTask {todoTask})")
+                .WithParam("todoTask", task)
+                .ExecuteWithoutResultsAsync();
+            taskId = task.Id;
+        }
+        catch (Exception exception)
+        {
+            throw new Exception(exception.Message);
+        }
+
+        return taskId;
     }
 
     public void Create(TaskAggregate task)
