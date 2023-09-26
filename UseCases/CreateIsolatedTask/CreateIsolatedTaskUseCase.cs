@@ -27,9 +27,13 @@ public class CreateIsolatedTaskUseCase : ICreateIsolatedTaskInputPort
 
     public async ValueTask Handle(CreateIsolatedTaskInputDto inputDto)
     {
-        TodoTask task = new(inputDto.Name, inputDto.IsFun, inputDto.IsProductive, inputDto.Status);
-        CreateIsolatedTaskOutputDto outDto = new(task);
-        _taskRepository.Create(task);
+        TodoTask task;
+        CreateIsolatedTaskOutputDto outDto;
+        string taskId;
+
+        task = new TodoTask(inputDto.Name, inputDto.IsFun, inputDto.IsProductive, inputDto.Status);
+        taskId = await _taskRepository.Create(task);
+        outDto = new CreateIsolatedTaskOutputDto(taskId);
         await _outputPort.Handle(outDto);
     }
 }
