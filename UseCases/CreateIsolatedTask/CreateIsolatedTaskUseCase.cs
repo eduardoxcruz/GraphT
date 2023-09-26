@@ -3,7 +3,6 @@ using Common.Repositories.TaskRepository;
 
 using DTOs.CreateIsolatedTask;
 
-using Model.Aggregates;
 using Model.Entities;
 
 using UseCasesPorts.CreateIsolatedTask;
@@ -31,7 +30,6 @@ public class CreateIsolatedTaskUseCase : ICreateIsolatedTaskInputPort
         TodoTask task = new(inputDto.Name, inputDto.IsFun, inputDto.IsProductive, inputDto.Status);
         CreateIsolatedTaskOutputDto outDto = new(task);
         _taskRepository.Create(task);
-        await _unitOfWork.SaveChanges();
         await _outputPort.Handle(outDto);
     }
 }
