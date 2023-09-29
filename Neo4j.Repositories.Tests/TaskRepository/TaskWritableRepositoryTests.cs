@@ -21,4 +21,27 @@ public class TaskWritableRepositoryTests
             .ExecuteWithoutResultsAsync();
         Assert.Equal(task.Id, taskId);
     }
+    
+    [Fact]
+    public async void Create_ShouldThrowExceptionIfGraphClientFails()
+    {
+        // Arrange
+        IGraphClient graphClient = Substitute.For<IGraphClient>();
+        TaskWritableRepository repository = new(graphClient);
+        TodoTask task = new("Test task", true, false, Status.ReadyToStart);
+
+        // Act
+        graphClient.Cypher
+            .Create(Arg.Any<string>())
+            .WithParam(Arg.Any<string>(), Arg.Any<object>())
+            .ExecuteWithoutResultsAsync()
+            .Returns(_ => throw new Exception("Something wrong."));
+
+        //Assert
+        Exception exception = await Assert.ThrowsAsync<Exception>(() => graphClient.Cypher
+            .Create(Arg.Any<string>())
+            .WithParam(Arg.Any<string>(), Arg.Any<object>())
+            .ExecuteWithoutResultsAsync());
+        Assert.Equal("Something wrong.", exception.Message);
+    }
 }
