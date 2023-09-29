@@ -22,4 +22,8 @@
         </PackageReference>
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\Neo4j.Repositories\Neo4j.Repositories.csproj" />
+    </ItemGroup>
+
 </Project>
