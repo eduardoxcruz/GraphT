@@ -6,10 +6,10 @@ public class TodoTask
 {
     public string Id { get; private set; }
     public string Name { get; set; }
-    public bool IsFun { get; private set; }
-    public bool IsProductive { get; private set; }
-    public Priority Priority { get; private set; }
-    public Status Status { get; private set; }
+    public bool IsFun { get; set; }
+    public bool IsProductive { get; set; }
+    public Priority Priority { get; set; }
+    public Status Status { get; set; }
 
     public TodoTask(string name, bool isFun, bool isProductive, Status status)
     {
