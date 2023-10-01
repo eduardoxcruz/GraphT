@@ -1,9 +1,9 @@
 ﻿using Common.Repositories.TaskRepository;
 
-using Model.Aggregates;
 using Model.Entities;
 
 using Neo4jClient;
+using Neo4jClient.Cypher;
 
 namespace Neo4j.Repositories.TaskRepository;
 
@@ -16,17 +16,20 @@ public class TaskWritableRepository : ITaskWritableRepository
         _graphClient = graphClient;
     }
 
-    public async ValueTask<string?> Create(TodoTask task)
+    public async ValueTask<string?> Create(TodoTask todoTask)
     {
         string? taskId;
 
         try
         {
-            await _graphClient.Cypher
-                .Create("(todoTask:TodoTask {todoTask})")
-                .WithParam("todoTask", task)
-                .ExecuteWithoutResultsAsync();
-            taskId = task.Id;
+            ICypherFluentQuery? fluentQuery = _graphClient.Cypher
+                .Create("(todoTask:TodoTask $todoTask)")
+                .WithParam("todoTask", todoTask);
+            string? queryText = fluentQuery.Query.QueryText;
+            IDictionary<string, object>? queryParameters = fluentQuery.Query.QueryParameters;
+            string? debugQueryText = fluentQuery.Query.DebugQueryText;
+            await fluentQuery.ExecuteWithoutResultsAsync();
+            taskId = todoTask.Id;
         }
         catch (Exception exception)
         {
@@ -34,10 +37,5 @@ public class TaskWritableRepository : ITaskWritableRepository
         }
 
         return taskId;
-    }
-
-    public void Create(TaskAggregate task)
-    {
-        throw new NotImplementedException();
     }
 }
