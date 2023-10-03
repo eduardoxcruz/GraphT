@@ -14,7 +14,7 @@ public class TodoTask
     public TodoTask(string name, bool isFun, bool isProductive, Status status)
     {
         Name = name;
-        Id = DateTime.Now.Ticks + "-" + Name;
+        Id = Guid.NewGuid().ToString();
         IsFun = isFun;
         IsProductive = isProductive;
         Priority = Priority.FromValues(IsFun, IsProductive);
