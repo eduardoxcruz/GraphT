@@ -55,4 +55,9 @@ public class TaskWritableRepository : ITaskWritableRepository
 
         return taskId;
     }
+
+    public ValueTask<string?> Update(TodoTask todoTask)
+    {
+        throw new NotImplementedException();
+    }
 }
