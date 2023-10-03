@@ -33,14 +33,12 @@ public class TaskWritableRepositoryTests
         // Act
         graphClient.Cypher
             .Create(Arg.Any<string>())
-            .WithParam(Arg.Any<string>(), Arg.Any<object>())
             .ExecuteWithoutResultsAsync()
             .Returns(_ => throw new Exception("Something wrong."));
 
         //Assert
         Exception exception = await Assert.ThrowsAsync<Exception>(() => graphClient.Cypher
             .Create(Arg.Any<string>())
-            .WithParam(Arg.Any<string>(), Arg.Any<object>())
             .ExecuteWithoutResultsAsync());
         Assert.Equal("Something wrong.", exception.Message);
     }
