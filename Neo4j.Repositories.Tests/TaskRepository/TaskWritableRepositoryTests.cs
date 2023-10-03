@@ -3,23 +3,20 @@
 public class TaskWritableRepositoryTests
 {
     [Fact]
-    public async void Create_ShouldCreateTaskAndReturnId()
+    public async void Create_ShouldCreateTaskAndReturnIdWhitBolgtGraphClient()
     {
         // Arrange
-        IGraphClient graphClient = Substitute.For<IGraphClient>();
+        IGraphClient graphClient = new BoltGraphClient("neo4j://localhost:7687", "neo4j", "pass1234");
+        await graphClient.ConnectAsync();
         TaskWritableRepository repository = new(graphClient);
-        TodoTask task = new("Test task", true, false, Status.ReadyToStart);
+        TodoTask task = new("TodoTask", true, false, Status.ReadyToStart);
 
         // Act
         var taskId = await repository.Create(task);
 
-        // Assert
-        await graphClient.Cypher
-            .Received(1)
-            .Create("(todoTask:TodoTask {todoTask})")
-            .WithParam("todoTask", task)
-            .ExecuteWithoutResultsAsync();
         Assert.Equal(task.Id, taskId);
+        Assert.NotNull(task.Id);
+        Assert.NotEmpty(task.Id);
     }
     
     [Fact]
