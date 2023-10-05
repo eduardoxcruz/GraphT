@@ -1,6 +1,4 @@
-﻿using Model.Entities;
-
-namespace Model.ValueObjects;
+﻿namespace Model.Entities;
 
 public class LifeArea
 {
