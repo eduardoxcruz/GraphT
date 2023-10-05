@@ -8,6 +8,9 @@ public class TodoTask
     public string Name { get; set; }
     public bool IsFun { get; set; }
     public bool IsProductive { get; set; }
+    public DateTime? StartTime { get; set; }
+    public DateTime? FinishTime { get; set; }
+    public DateTime? LimitDate { get; set; }
     public Priority Priority { get; set; }
     public Status Status { get; set; }
 
