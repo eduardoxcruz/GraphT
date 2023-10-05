@@ -13,6 +13,7 @@ public class TodoTask
     public DateTime? LimitDate { get; set; }
     public Priority Priority { get; set; }
     public Status Status { get; set; }
+    public List<TodoTask>? Downstream { get; set; }
 
     public TodoTask(string name, bool isFun, bool isProductive, Status status)
     {
