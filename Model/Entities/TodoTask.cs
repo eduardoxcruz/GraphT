@@ -8,7 +8,7 @@ public class TodoTask
     public string Name { get; set; }
     public bool IsFun { get; set; }
     public bool IsProductive { get; set; }
-    
+    public DatetimeInfo? DatetimeInfo { get; set; }
     public Priority Priority { get; set; }
     public Status Status { get; set; }
     public List<TodoTask>? Downstream { get; set; }
