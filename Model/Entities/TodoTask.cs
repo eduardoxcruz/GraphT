@@ -9,10 +9,10 @@ public class TodoTask
     public bool IsFun { get; set; }
     public bool IsProductive { get; set; }
     public float Progress { get; set; }
-    public DatetimeInfo? DatetimeInfo { get; set; }
+    public DatetimeInfo DatetimeInfo { get; set; }
     public Priority Priority { get; set; }
     public Status Status { get; set; }
-    public List<TodoTask>? Downstream { get; set; }
+    public List<TodoTask> Downstream { get; set; }
 
     public TodoTask(string name, bool isFun, bool isProductive, Status status)
     {
@@ -22,5 +22,7 @@ public class TodoTask
         IsProductive = isProductive;
         Priority = Priority.FromValues(IsFun, IsProductive);
         Status = status;
+        DatetimeInfo = new DatetimeInfo();
+        Downstream = new List<TodoTask>();
     }
 }
