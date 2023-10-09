@@ -42,6 +42,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Neo4j.Repositories", "Neo4j
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Neo4j.Repositories.Tests", "Neo4j.Repositories.Tests\Neo4j.Repositories.Tests.csproj", "{5F98A01E-2131-4EF0-B2AF-CBFB2FF50E2C}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4. Frameworks & Drivers", "4. Frameworks & Drivers", "{E1229F8C-79F2-4352-86EB-6C27132A7F94}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
