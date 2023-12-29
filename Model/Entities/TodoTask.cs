@@ -16,7 +16,9 @@ public class TodoTask
     public List<TodoTask> Upstream { get; set; }
     public List<TodoTask> Downstream { get; set; }
 
+#pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
     public TodoTask(string name, bool isFun, bool isProductive, Status status, Complexity? complexity = null)
+#pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
     {
         Name = name;
         Id = Guid.NewGuid().ToString();
