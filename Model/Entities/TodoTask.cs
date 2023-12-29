@@ -28,5 +28,10 @@ public class TodoTask
         DatetimeInfo = new DatetimeInfo();
         Upstream = new List<TodoTask>();
         Downstream = new List<TodoTask>();
+
+        if (Equals(Status, Status.Backlog) || Equals(Status, Status.ReadyToStart))
+        {
+            Progress = 0;
+        }
     }
 }
