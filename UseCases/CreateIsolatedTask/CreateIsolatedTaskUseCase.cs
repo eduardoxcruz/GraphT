@@ -27,7 +27,7 @@ public class CreateIsolatedTaskUseCase : ICreateIsolatedTaskInputPort
         CreateIsolatedTaskOutputDto outDto;
         string? taskId;
 
-        task = new TodoTask(inputDto.Name, inputDto.IsFun, inputDto.IsProductive, inputDto.Status);
+        task = new TodoTask(inputDto.Name, inputDto.IsFun, inputDto.IsProductive, inputDto.Status, inputDto.Complexity);
         taskId = await _taskRepository.Create(task);
         outDto = new CreateIsolatedTaskOutputDto(taskId);
         await _outputPort.Handle(outDto);
