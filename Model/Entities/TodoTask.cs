@@ -22,14 +22,34 @@ public class TodoTask
         Id = Guid.NewGuid().ToString();
         IsFun = isFun;
         IsProductive = isProductive;
-        Priority = Priority.FromValues(IsFun, IsProductive);
         Status = status;
         Complexity = complexity ?? Complexity.Indefinite;
+
+        InitializePriority();
+        InitializeDatetimeInfo();
+        InitializeDependencies();
+        InitializeProgress();
+    }
+
+    private void InitializePriority()
+    {
+        Priority = Priority.FromValues(IsFun, IsProductive);
+    }
+
+    private void InitializeDatetimeInfo()
+    {
         DatetimeInfo = new DatetimeInfo();
+    }
+
+    private void InitializeDependencies()
+    {
         Upstream = new List<TodoTask>();
         Downstream = new List<TodoTask>();
+    }
 
-        if (Equals(Status, Status.Backlog) || Equals(Status, Status.ReadyToStart))
+    private void InitializeProgress()
+    {
+        if (Status.Equals(Status.Backlog) || Status.Equals(Status.ReadyToStart))
         {
             Progress = 0;
         }
