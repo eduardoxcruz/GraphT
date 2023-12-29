@@ -9,7 +9,7 @@ public class TaskWritableRepositoryTests
         IGraphClient graphClient = new BoltGraphClient("neo4j://localhost:7687", "neo4j", "pass1234");
         await graphClient.ConnectAsync();
         TaskWritableRepository repository = new(graphClient);
-        TodoTask task = new("TodoTask", true, false, Status.ReadyToStart);
+        TodoTask task = new("TodoTask", true, false, Status.ReadyToStart, Complexity.Low);
 
         // Act
         var taskId = await repository.Create(task);
@@ -25,7 +25,7 @@ public class TaskWritableRepositoryTests
         // Arrange
         IGraphClient graphClient = Substitute.For<IGraphClient>();
         TaskWritableRepository repository = new(graphClient);
-        TodoTask task = new("Test task", true, false, Status.ReadyToStart);
+        TodoTask task = new("Test task", true, false, Status.ReadyToStart, Complexity.High);
 
         // Act
         graphClient.Cypher
