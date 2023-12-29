@@ -3,7 +3,7 @@
 public class TaskWritableRepositoryTests
 {
     [Fact]
-    public async void Create_ShouldCreateTaskAndReturnIdWhitBolgtGraphClient()
+    public async void Create_ShouldCreateTaskAndReturnIdWhitBoltGraphClient()
     {
         // Arrange
         IGraphClient graphClient = new BoltGraphClient("neo4j://localhost:7687", "neo4j", "pass1234");
